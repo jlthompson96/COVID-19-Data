@@ -24,34 +24,36 @@ $.ajax({
 
 //Get COVID Data
 async function getData() {
-    const response = await this.fetch('daily.csv');
-    const data = await response.text();
-    const xLabels = [];
-    const yLabels = [];
-    const table = data.split('\n').slice(1);
-    table.forEach(row => {
-        const columns = row.split(',');
-        const date = columns[0];
-        xLabels.push(date);
-        const numCases = columns[2];
-        yLabels.push(numCases);
+    const xAxis = [];
+    const yAxis = [];
+    $.ajax({
+        url: 'https://covidtracking.com/api/v1/us/daily.json', success: function (data) {
 
 
-    });
-    return { xLabels, yLabels };
+            for (i = 0; i < data.length; i++) {
+                const date = data[i].date;
+                xAxis.push(date);
+                const cases = data[i].positive;
+                yAxis.push(cases);
+            }
+
+        }
+
+    })
+    return { xAxis, yAxis };
 }
 
 //Plot Data
 async function setup() {
-    const data = await getData();
+    const chartData = await getData();
     const ctx = document.getElementById('dailyCases').getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: data.xLabels,
+            labels: chartData.xAxis,
             datasets: [{
                 label: 'Total # of Cases',
-                data: data.yLabels,
+                data: chartData.yAxis,
                 fill: false,
                 pointRadius: 1,
 
@@ -65,8 +67,15 @@ async function setup() {
                 maintainAspectRatio: false,
                 borderWidth: 2,
                 pointRadius: 2,
-                responsive: true
+                responsive: true,
             }]
         },
+        options: {
+            scales: {
+                ticks: [{
+                        reverse: true
+                }]
+            }
+        }
     });
 }

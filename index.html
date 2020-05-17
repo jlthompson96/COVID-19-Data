@@ -5,9 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/js/mdb.min.js"></script>
+    <script src="main.js"></script>
     <title>COVID-19 Case Data Dashboard</title>
 </head>
 
@@ -15,34 +32,58 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">COVID-19 Case Dashboard</h1>
-            <p class="lead">Current data provided by The Covid Tracking Project</p>
+            <p class="lead">Current data provided by The COVID Tracking Project</p>
         </div>
     </div>
-    <h2>Total US Cases</h2>
-    <div id="totalCases"></div>
-    <h2>Total Tests</h2>
-    <div id="totalTested"></div>
-    <h2>Total Recovered</h2>
-    <div id="recovered"></div>
-    <h2>Total Negative Cases</h2>
-    <div id="negativeCases"></div>
-    <h1>Total Number of Daily Cases</h1>
+
+    <!-- Data Overview -->
+    <div class="card-deck">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Total US Cases</h5>
+                <div id="totalCases">
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Total # of Tests</h5>
+                <div id="totalTested">
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Total recovered</h5>
+                <div id="recovered">
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This card has even longer content than the first to show that equal height
+                        action.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Total Negative Tests</h5>
+                <div id="negativeCases"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Number of Cases by Day Chart -->
+    <br>
+    <h1>Total Number of Cases - Daily</h1>
     <canvas id="dailyCases"></canvas>
-    <footer>
-        <p>Last Updated: </p>
-        <div id="lastModified"></div>
-        <p>Data provided by <a href="https://covidtracking.com/api">The COVID Tracking Project</a></p>
+    <p>Last Updated: </p>
+    <div id="lastModified"></div>
+    <br>
+    <!-- Footer -->
+    <footer class="page-footer font-small blue">
+        <p>Date provided by </p><a href="https://covidtracking.com/">The COVID Tracking Project</a>
+        </div>
     </footer>
 </body>
-<script src="main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
-    integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
-    crossorigin="anonymous"></script>
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 </html>
