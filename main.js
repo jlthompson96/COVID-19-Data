@@ -2,7 +2,7 @@ window.addEventListener('load', setup);
 
 //Pull Data from API
 $.ajax({
-    url: "https://covidtracking.com/api/v1/us/current.json", success: function (result) {
+    url: "https://api.covidtracking.com/v1/us/current.json", success: function (result) {
 
         //Format Numbers
         function formatNumber(num) {
@@ -10,12 +10,14 @@ $.ajax({
         }
         const totalCases = formatNumber(result[0].positive);
         const recovered = formatNumber(result[0].recovered);
+        const deaths = formatNumber(result[0].death)
         const negativeCases = formatNumber(result[0].negative);
         const totalTested = formatNumber(result[0].totalTestResults);
 
         //Append to HTML
         $("#totalCases").html(totalCases);
         $("#recovered").html(recovered);
+        $("#deaths").html(deaths);
         $("#negativeCases").html(negativeCases);
         $("#totalTested").html(totalTested);
         $("#lastModified").html(result[0].lastModified);
@@ -26,8 +28,12 @@ $.ajax({
 async function getData() {
     const xAxis = [];
     const yAxis = [];
+    console.log(yAxis);
+    const rev = yAxis.reverse();
+    console.log(rev);
+    
     $.ajax({
-        url: 'https://covidtracking.com/api/v1/us/daily.json', success: function (data) {
+        url: 'https://api.covidtracking.com/v1/us/daily.json', success: function (data) {
 
 
             for (i = 0; i < data.length; i++) {
@@ -40,8 +46,11 @@ async function getData() {
         }
 
     })
+
     return { xAxis, yAxis };
 }
+
+
 
 //Plot Data
 async function setup() {
@@ -64,18 +73,19 @@ async function setup() {
                 borderColor:
                     'rgba(255, 99, 132, 1)'
                 ,
-                maintainAspectRatio: false,
-                borderWidth: 2,
+                borderWidth: 1,
                 pointRadius: 2,
                 responsive: true,
+                animation: false
             }]
         },
         options: {
             scales: {
                 ticks: [{
-                        reverse: true
+                    reverse: false
                 }]
             }
         }
     });
+    setTimeout(function() { myChart.update(); },100);
 }

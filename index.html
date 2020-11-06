@@ -58,9 +58,15 @@
             <div class="card-body">
                 <h5 class="card-title">Total recovered</h5>
                 <div id="recovered">
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to show that equal height
-                        action.</p>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Deaths</h5>
+                <div id="deaths">
+                    <p class="card-text"></p>
                 </div>
             </div>
         </div>
@@ -73,12 +79,16 @@
     </div>
 
     <!-- Number of Cases by Day Chart -->
-    <br>
-    <h1>Total Number of Cases - Daily</h1>
-    <canvas id="dailyCases"></canvas>
-    <p>Last Updated: </p>
-    <div id="lastModified"></div>
-    <br>
+    <div class="container">
+        <br>
+        <h1>Total Number of Cases in US - Daily</h1>
+        <div class="active">
+            <canvas id="dailyCases"></canvas>
+        </div>
+        <p>Last Updated: </p>
+        <div id="lastModified"></div>
+        <br>
+    </div>
     <!-- Footer -->
     <footer class="page-footer font-small blue">
         <p>Date provided by </p><a href="https://covidtracking.com/">The COVID Tracking Project</a>
