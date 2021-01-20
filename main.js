@@ -2,7 +2,7 @@ window.addEventListener('load', setup);
 
 //Pull Data from API
 $.ajax({
-    url: "https://cors-anywhere.herokuapp.com/https://api.covidtracking.com/v1/us/current.json", success: function (result) {
+    url: "https://api.covidtracking.com/v1/us/current.json", success: function (result) {
 
         //Format Numbers
         function formatNumber(num) {
@@ -33,7 +33,7 @@ async function getData() {
     console.log(rev);
     
     $.ajax({
-        url: 'https://cors-anywhere.herokuapp.com/https://api.covidtracking.com/v1/us/daily.json', success: function (data) {
+        url: 'https://api.covidtracking.com/v1/us/daily.json', success: function (data) {
 
 
             for (i = 0; i < data.length; i++) {
