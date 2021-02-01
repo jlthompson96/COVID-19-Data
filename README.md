@@ -1,4 +1,6 @@
 # COVID-19 Data Tracker
+<img src="https://cdn.pixabay.com/photo/2020/03/16/16/29/virus-4937553_960_720.jpg" alt="COVID-19 Disease" height="200px with=300px"/>
+
 ## Implementation
 Using HTML5, CSS3, JavaScript as well as a modern designed BootStrap frameork to display inforamtion out the COVID-19 pandemic.
 
@@ -10,5 +12,7 @@ Using HTML5, CSS3, JavaScript as well as a modern designed BootStrap frameork to
 
 ## Future Plans
 * Redesign layout
+* Update chart so it loads when the page is loaded
+* Fix CORS issue in regards to data being pulled from the API
 
 Link to live demo: https://jlthompson96.github.io/COVID-19-Data/
