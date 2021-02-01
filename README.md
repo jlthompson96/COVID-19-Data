@@ -16,3 +16,6 @@ Using HTML5, CSS3, JavaScript as well as a modern designed BootStrap frameork to
 * Fix CORS issue in regards to data being pulled from the API
 
 Link to live demo: https://jlthompson96.github.io/COVID-19-Data/
+
+<!--
+Picture referenced from: https://pixabay.com/images/id-4937553/
