@@ -1,6 +1,8 @@
 # COVID-19 Data Tracker
 <img src="https://cdn.pixabay.com/photo/2020/03/16/16/29/virus-4937553_960_720.jpg" alt="COVID-19 Disease" height="200px with=300px"/>
 
+### *As of March 7th 2021 The Covid Tracking Project no longer updates their API.
+
 ## Implementation
 Using HTML5, CSS3, JavaScript as well as a modern designed BootStrap frameork to display inforamtion out the COVID-19 pandemic.
 
